@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package kevin;
+
+option java_package = "grpc";
+option java_outer_classname = "GreeterMessage";
+
+service Greeter{
+    rpc SayHello (GreeterHelloRequest) returns (GreeterHelloReply) {}
+
+    rpc SayHelloAgain (GreeterHelloRequest) returns (GreeterHelloReply) {}
+}
+
+message GreeterHelloRequest{
+    string name = 1;
+}
+
+message GreeterHelloReply{
+    string message = 1;
+}
